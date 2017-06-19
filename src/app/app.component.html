@@ -1,3 +1,48 @@
-<h1>
-  {{title}}
-</h1>
+<nav-menu [CartList]="CartList"></nav-menu>
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Latest Features</h3>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Page Features -->
+  <div class="row text-center">
+
+    <div class="col-md-3 col-sm-6 hero-feature" *ngFor="let product of ProductList">
+      <div class="thumbnail">
+        <img src="http://placehold.it/800x500" alt="">
+        <div class="caption">
+          <h3>{{product.name}}</h3>
+          <p>{{product.description}}</p>
+          <h3>
+            {{product.price}} $   
+          </h3>
+        </div>
+        <div class="text-center">
+          <a href="#" class="btn btn-success" (click)="addCart(product)">Add Cart</a> <a href="#" class="btn btn-default">More Info</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; Your Website 2014</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<!-- /.container -->
